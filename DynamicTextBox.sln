@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33130.400
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTextBox", "DynamicTextBox\DynamicTextBox.csproj", "{1EB9629A-E6BB-4E29-8A17-874094A406CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTextBox.Sandbox", "DynamicTextBox.Sandbox\DynamicTextBox.Sandbox.csproj", "{ABE16B5F-E077-4CED-950C-AA902A4C1227}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EB9629A-E6BB-4E29-8A17-874094A406CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB9629A-E6BB-4E29-8A17-874094A406CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB9629A-E6BB-4E29-8A17-874094A406CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB9629A-E6BB-4E29-8A17-874094A406CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABE16B5F-E077-4CED-950C-AA902A4C1227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABE16B5F-E077-4CED-950C-AA902A4C1227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABE16B5F-E077-4CED-950C-AA902A4C1227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABE16B5F-E077-4CED-950C-AA902A4C1227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E596436A-BC68-453F-B544-A805A54AEDE1}
+	EndGlobalSection
+EndGlobal
