@@ -7,13 +7,13 @@
 <DataTemplate x:Key="ItemTemplate"  >
         <TextBox  
             
-            helpers:TextBoxCursorPositionBehavior.CaretIndex="{Binding CursorPosition, Mode=TwoWay}"  
+            helpers:TextBoxCursorPositionBehavior.CaretIndex="{Binding CursorPosition, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  
                  VerticalAlignment="Center" 
-                 Text="{Binding Text}" BorderThickness="0"/>
+                 Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0"/>
     </DataTemplate>
 
     <DataTemplate x:Key="DynamicVariableTemplate">
-        <Border ToolTip="{Binding EvaluatedValue}" Margin="1,0,0,0" Background="LightBlue" CornerRadius="2">
+        <Border ToolTip="{Binding EvaluatedText}" Margin="1,0,0,0" Background="LightBlue" CornerRadius="2">
             <StackPanel  Orientation="Horizontal">
                 <TextBlock Text="{Binding Text}" FontWeight="Bold" Padding="2"/>
                 <Button

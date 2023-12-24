@@ -262,6 +262,13 @@ namespace BlueByte.Wpf.Controls
 
             if (this.Data.Contains(LastSelectedItem) == false || LastSelectedItem == null)
             {    
+                var lastItem = this.Data.Last() as Item;
+
+                if (lastItem != null)
+                if (string.IsNullOrWhiteSpace(lastItem.Text))
+                        this.Data.Remove(lastItem);
+
+
                 this.Data.Add(variable);
                 RefreshEvaluatedPath();
                 MakeSureEndOfControlIsEditable();

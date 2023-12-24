@@ -38,6 +38,17 @@
     <StartupObject>DynamicTextBox.Sandbox.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BlueByte.SOLIDWORKS.PDMProfessional.Extensions, Version=2021.0.37.0, Culture=neutral, PublicKeyToken=89f75b98047e27b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\BlueByte.SOLIDWORKS.PDMProfessional.Extensions.2021.0.37\lib\net461\BlueByte.SOLIDWORKS.PDMProfessional.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EPDM.Interop.epdm, Version=5.24.0.0, Culture=neutral, PublicKeyToken=0625a0c4bb5de148, processorArchitecture=MSIL">
+      <HintPath>..\packages\BlueByte.SOLIDWORKS.PDMProfessional.Interops.2021.0.0\lib\EPDM.Interop.epdm.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EPDM.Interop.EPDMResultCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0625a0c4bb5de148, processorArchitecture=MSIL">
+      <HintPath>..\packages\BlueByte.SOLIDWORKS.PDMProfessional.Interops.2021.0.0\lib\EPDM.Interop.EPDMResultCode.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -89,6 +100,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

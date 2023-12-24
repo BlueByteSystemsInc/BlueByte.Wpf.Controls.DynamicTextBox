@@ -1,4 +1,6 @@
-﻿using BlueByte.Wpf.Controls;
+﻿using BlueByte.SOLIDWORKS.PDMProfessional.Extensions;
+using BlueByte.Wpf.Controls;
+using EPDM.Interop.epdm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -34,19 +36,14 @@ namespace DynamicTextBox.Sandbox
             this.DynamicControl.Data.Add(new Item() { Text = @"\FileName" });
 
 
-            var DynamicVariableMenuItems = new ObservableCollection<DynamicVariableMenuItem>();
-            var topItem = new DynamicVariableMenuItem();
-            topItem.Variable = new DynamicVariable() { Text = "Variables" };
-            var firstItem = new DynamicVariableMenuItem();
-            firstItem.Variable = new DynamicVariable() { Text = "Description" };
-            var secondItem = new DynamicVariableMenuItem();
-            secondItem.Variable = new DynamicVariable() { Text = "Cost" };
 
-            topItem.Add(firstItem);
-            topItem.Add(secondItem);
-           
+            var vault = new EdmVault5();
+            vault.LoginAuto("BlueByte", 0);
 
-            this.DynamicControl.DynamicVariableMenuItems.Add(topItem);
+            var ret = DynamicVariableMenuItem.Create(vault.GetVariableNames());
+
+
+            ret.ToList().ForEach(x=> this.DynamicControl.DynamicVariableMenuItems.Add(x));
         }
 
     }
