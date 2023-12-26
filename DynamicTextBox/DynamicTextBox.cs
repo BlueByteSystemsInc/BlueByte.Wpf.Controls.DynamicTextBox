@@ -63,7 +63,8 @@ namespace BlueByte.Wpf.Controls
         public DynamicTextBox()
         {
             this.Data.CollectionChanged += Data_CollectionChanged;
-          
+
+            MakeSureEndOfControlIsEditable();
         }
 
         private void Data_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -102,6 +103,21 @@ namespace BlueByte.Wpf.Controls
 
             RefreshEvaluatedPath();
         }
+
+
+
+
+        public Brush GlobalBackground
+        {
+            get { return (Brush)GetValue(GlobalBackgroundProperty); }
+            set { SetValue(GlobalBackgroundProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for GlobalBackground.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty GlobalBackgroundProperty =
+            DependencyProperty.Register("GlobalBackground", typeof(Brush), typeof(DynamicTextBox), new PropertyMetadata(Brushes.Transparent));
+
+
 
         private void Item_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
@@ -262,7 +278,7 @@ namespace BlueByte.Wpf.Controls
 
             if (this.Data.Contains(LastSelectedItem) == false || LastSelectedItem == null)
             {    
-                var lastItem = this.Data.Last() as Item;
+                var lastItem = this.Data.LastOrDefault() as Item;
 
                 if (lastItem != null)
                 if (string.IsNullOrWhiteSpace(lastItem.Text))
@@ -320,9 +336,11 @@ namespace BlueByte.Wpf.Controls
 
         public void MakeSureEndOfControlIsEditable()
         {
+            if (this.Data.Count == 0)
+                this.Data.Add(new Item() { Text = string.Empty });
 
-            if (this.Data.Last() is DynamicVariable)
-                this.Data.Add(new Item() { Text = " " });
+            if (this.Data.LastOrDefault() is DynamicVariable)
+                this.Data.Add(new Item() { Text = string.Empty });
         }
     }
 

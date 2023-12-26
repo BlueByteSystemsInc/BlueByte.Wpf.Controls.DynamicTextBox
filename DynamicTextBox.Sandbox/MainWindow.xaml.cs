@@ -31,9 +31,9 @@ namespace DynamicTextBox.Sandbox
             var col = new ObservableCollection<object>();
 
 
-            this.DynamicControl.Data.Add(new Item() { Text = @"C:\" });
-            this.DynamicControl.Data.Add(new DynamicVariable() { Text = @"Description" });
-            this.DynamicControl.Data.Add(new Item() { Text = @"\FileName" });
+            //this.DynamicControl.Data.Add(new Item() { Text = @"C:\" });
+            //this.DynamicControl.Data.Add(new DynamicVariable() { Text = @"Description" });
+            //this.DynamicControl.Data.Add(new Item() { Text = @"\FileName" });
 
 
 
